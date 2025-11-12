@@ -1,0 +1,18 @@
+from collections import deque
+q = deque()
+
+def addCall(cid, time): q.append((cid, time))
+def answerCall(): 
+    if q: print("Answered:", q.popleft())
+    else: print("No calls to answer")
+def viewQueue(): print("Queue:", list(q))
+def isQueueEmpty(): print("Empty:", not q)
+
+# --- Demo ---
+addCall(101,5); addCall(102,3); addCall(103,4)
+viewQueue()
+answerCall()
+viewQueue()
+isQueueEmpty()
+
+# Time: O(1) per op | Space: O(n)
